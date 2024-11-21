@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>List of Student Marks</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  Welcome to Magadh University
+</header>
+<main>
+  <h1>Student Marks</h1>
+  <div th:if="${message}" class="alert alert-success" role="alert">
+    <span th:text="${message}"></span>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Student Name</th>
+      <th>Subject ID</th>
+      <th>Semester</th>
+      <th>Internal 1</th>
+      <th>Internal 2</th>
+      <th>Internal 3</th>
+      <th>Best Internal Marks</th>
+      <th>Final Exam Marks</th>
+      <th>Total Marks</th>
+      <th>Percentage</th>
+      <th>Division</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="studentMarks : ${studentMarksList}">
+      <td th:text="${studentMarks.markId}"></td>
+      <td th:text="${studentMarks.student?.name}"></td>
+      <td th:text="${studentMarks.subjectId}"></td>
+      <td th:text="${studentMarks.semester}"></td>
+      <td th:text="${studentMarks.internal1}"></td>
+      <td th:text="${studentMarks.internal2}"></td>
+      <td th:text="${studentMarks.internal3}"></td>
+      <td th:text="${studentMarks.bestInternalMarks}"></td>
+      <td th:text="${studentMarks.finalExamMarks}"></td>
+      <td th:text="${studentMarks.totalMarks}"></td>
+      <td th:text="${studentMarks.percentage}"></td>
+      <td th:text="${studentMarks.division}" th:classappend="'division-' + ${studentMarks.division}"></td>
+      <td class="action-buttons">
+        <a th:href="@{/student-marks/update/{markId}(markId=${studentMarks.markId})}" class="btn btn-warning btn-sm btn-update">Update</a>
+        <form th:action="@{/student-marks/delete/{markId}(markId=${studentMarks.markId})}" method="post" style="display:inline;">
+          <button type="submit" class="btn btn-danger btn-sm btn-delete">Delete</button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

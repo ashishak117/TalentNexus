@@ -1,0 +1,48 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <title>Employee Attendance</title>-->
+<!--  <link rel="stylesheet" type="text/css" href="/css/style.css">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--  Welcome to Magadh University-->
+<!--</header>-->
+<!--<main>-->
+<!--  <h1>Enter Department for Attendance</h1>-->
+<!--  <form action="/employees/attendance" method="post" class="bg-white p-4 rounded shadow-sm mx-auto" style="width: 100%; max-width: 600px;">-->
+<!--    <div class="form-group">-->
+<!--      <label for="department">Department</label>-->
+<!--      <input type="text" id="department" name="department" class="form-control" required>-->
+<!--    </div>-->
+<!--    <button type="submit" class="btn btn-success">Submit</button>-->
+<!--  </form>-->
+<!--</main>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Employee Attendance</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  Welcome to Magadh University
+</header>
+<main>
+  <h1>Enter Department for Attendance</h1>
+  <form action="/employees/attendance/department" method="post" class="bg-white p-4 rounded shadow-sm mx-auto" style="width: 100%; max-width: 600px;">
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</main>
+</body>
+</html>
+

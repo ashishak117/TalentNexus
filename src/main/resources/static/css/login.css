@@ -1,0 +1,101 @@
+body {
+    background: linear-gradient(135deg, #667eea, #84fab0, #764ba2); /* Cool blue, light green, and purple gradient */
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    padding: 20px;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.40); /* Darker shadow */
+}
+
+header {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+.welcome {
+    display: block;
+    color: #4CAF50; /* Green color for welcome text */
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold; /* Make the welcome message bolder */
+}
+
+.sign {
+    padding-top: 20px;
+    color: #4CAF50; /* Green color */
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.un, .pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 27px;
+    margin-left: 46px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: #4CAF50; /* Green color */
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    margin-bottom: 20px; /* Added margin-bottom for spacing */
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.forgot {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    padding-top: 15px;
+}
+
+a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .main {
+        border-radius: 0px;
+    }
+}

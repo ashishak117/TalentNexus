@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Update Employee</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  Welcome to Magadh University
+</header>
+<main>
+  <h1>Update Employee</h1>
+  <form th:action="@{/employees/update/{employeeId}(employeeId=${employee.employeeId})}" th:object="${employee}" method="post" class="bg-white p-4 rounded shadow-sm mx-auto" style="width: 100%; max-width: 600px;">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-control" th:field="*{name}">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" class="form-control" th:field="*{address}">
+    </div>
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="text" id="contactNumber" name="contactNumber" class="form-control" th:field="*{contactNumber}">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" th:field="*{email}">
+    </div>
+    <div class="form-group">
+      <label for="position">Position</label>
+      <input type="text" id="position" name="position" class="form-control" th:field="*{position}">
+    </div>
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" class="form-control" th:field="*{department}">
+    </div>
+    <div class="form-group">
+      <label for="dateOfJoining">Date of Joining</label>
+      <input type="date" id="dateOfJoining" name="dateOfJoining" class="form-control" th:field="*{dateOfJoining}">
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+</main>
+</body>
+</html>

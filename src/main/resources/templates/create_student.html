@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Register Student</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  Welcome to Magadh University
+</header>
+<main>
+  <h1>Register Student</h1>
+  <form action="/students" method="post" class="bg-white p-4 rounded shadow-sm mx-auto" style="width: 100%; max-width: 600px;">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" id="department" name="department" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input type="text" id="year" name="year" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</main>
+</body>
+</html>

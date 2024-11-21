@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Record Attendance</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    Welcome to Magadh University
+</header>
+<main>
+    <h1>Record Attendance</h1>
+    <form action="/attendance/batch" method="post" class="bg-white p-4 rounded shadow-sm mx-auto" style="width: 100%; max-width: 800px;">
+        <input type="hidden" name="department" th:value="${department}" />
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.studentId}">1</td>
+                <td th:text="${student.name}">John Doe</td>
+                <td>
+                    <select th:name="${'status' + student.studentId}" class="form-control" required>
+                        <option value="" th:selected="${attendanceMap[student.studentId]?.status == null}">Select Status</option>
+                        <option value="Present" th:selected="${attendanceMap[student.studentId]?.status == 'Present'}">Present</option>
+                        <option value="Absent" th:selected="${attendanceMap[student.studentId]?.status == 'Absent'}">Absent</option>
+                    </select>
+                </td>
+                <td th:text="${#temporals.format(attendanceMap[student.studentId]?.date, 'MMM-d-yy')}">N/A</td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <div class="pagination mt-4">
+            <span th:if="${currentPage > 0}">
+                <a th:href="@{/attendance/record(department=${department}, page=${currentPage - 1})}">Previous</a>
+            </span>
+        <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+                <a th:href="@{/attendance/record(department=${department}, page=${i})}" th:text="${i + 1}" th:classappend="${currentPage == i} ? 'active' : ''">1</a>
+            </span>
+        <span th:if="${currentPage < totalPages - 1}">
+                <a th:href="@{/attendance/record(department=${department}, page=${currentPage + 1})}">Next</a>
+            </span>
+    </div>
+</main>
+</body>
+</html>

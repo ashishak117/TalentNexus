@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>View Attendance</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  Welcome to Magadh University
+</header>
+<main>
+  <h1 class="text-center">View Attendance</h1>
+
+  <div th:if="${employeeName}" class="text-center mb-4">
+    <h2 th:text="'Employee Name: ' + ${employeeName}"></h2>
+    <h3 th:text="'Employee ID: ' + ${employeeId}"></h3>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Attendance ID</th>
+      <th>Employee ID</th>
+      <th>Employee Name</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="attendance : ${attendanceRecords}">
+      <td th:text="${attendance.attendanceId}">1</td>
+      <td th:text="${attendance.employee.employeeId}">101</td>
+      <td th:text="${attendance.employee.name}">John Doe</td>
+      <td th:text="${attendance.date}">2024-11-09</td>
+      <td th:text="${attendance.status}">Present</td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

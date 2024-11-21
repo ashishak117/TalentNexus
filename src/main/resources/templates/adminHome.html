@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admindash.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome, Admin</h1>
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p th:text="${employeeCount}"></p>
+            <a href="/admin/employees">View Employees</a>
+        </div>
+        <div class="card">
+            <h3>Total Students</h3>
+            <p th:text="${studentCount}"></p>
+            <a href="/admin/students">View Students</a>
+        </div>
+        <div class="card">
+            <h3>Total Subjects</h3>
+            <p th:text="${subjectCount}"></p>
+            <a href="/admin/subjects">View Subjects</a>
+        </div>
+    </div>
+    <div class="actions">
+        <a href="/admin/addEmployee">Add New Employee</a>
+        <a href="/admin/addStudent">Add New Student</a>
+        <a href="/admin/addSubject">Add New Subject</a>
+        <a href="/admin/manageAttendance">Manage Attendance</a>
+        <a href="/admin/reports">View Reports</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <title>List Students</title>-->
+<!--  <link rel="stylesheet" type="text/css" href="/css/style.css">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--  Welcome to Magadh University-->
+<!--</header>-->
+<!--<main>-->
+<!--  <h1>List of Students</h1>-->
+<!--  <table class="table table-striped">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>ID</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>Department</th>-->
+<!--      <th>Year</th>-->
+<!--      <th>Email</th>-->
+<!--      <th>Actions</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="student : ${students}">-->
+<!--      <td th:text="${student.studentId}"></td>-->
+<!--      <td th:text="${student.name}"></td>-->
+<!--      <td th:text="${student.department}"></td>-->
+<!--      <td th:text="${student.year}"></td>-->
+<!--      <td th:text="${student.email}"></td>-->
+<!--      <td class="action-buttons">-->
+<!--        <a th:href="@{/students/view/{studentId}(studentId=${student.studentId})}" class="btn btn-info btn-sm">View</a>-->
+<!--        <a th:href="@{/students/update/{studentId}(studentId=${student.studentId})}" class="btn btn-primary btn-sm">Edit</a>-->
+<!--        <form th:action="@{/students/delete/{studentId}(studentId=${student.studentId})}" method="post">-->
+<!--          <button type="submit" class="btn btn-danger btn-sm">Delete</button>-->
+<!--        </form>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--</main>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>List Students</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  <img src="/images/hrmslogo.png" alt="HRMS Logo" class="logo">
+  <span>Welcome to Magadh University</span>
+</header>
+<main>
+  <h1>List of Students</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Year</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+      <td th:text="${student.studentId}"></td>
+      <td th:text="${student.name}"></td>
+      <td th:text="${student.department}"></td>
+      <td th:text="${student.year}"></td>
+      <td th:text="${student.email}"></td>
+      <td class="action-buttons">
+        <a th:href="@{/students/view/{studentId}(studentId=${student.studentId})}" class="btn btn-info btn-sm">View</a>
+        <a th:href="@{/students/update/{studentId}(studentId=${student.studentId})}" class="btn btn-primary btn-sm">Edit</a>
+        <form th:action="@{/students/delete/{studentId}(studentId=${student.studentId})}" method="post">
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</main>
+</body>
+</html>

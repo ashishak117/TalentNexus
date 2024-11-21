@@ -1,0 +1,70 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <title>Student Home</title>-->
+<!--  <link rel="stylesheet" type="text/css" href="/css/style.css">-->
+<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--  <img src="/images/hrmslogo.png" alt="HRMS Logo" class="logo">-->
+<!--  <span>Welcome to Magadh University - Student</span>-->
+<!--</header>-->
+<!--<main>-->
+<!--  <div class="container">-->
+<!--    <h1>Student Home Page</h1>-->
+<!--    <p>Welcome to the student section.</p>-->
+<!--  </div>-->
+<!--</main>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  <img src="/images/hrmslogo.png" alt="HRMS Logo" class="logo">
+  <span>Student Dashboard</span>
+  <a href="/logout" class="btn btn-secondary float-right">Logout</a>
+</header>
+<main class="container">
+  <h1>Welcome Student</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">View Attendance</div>
+        <div class="card-body">
+          <p>Check your attendance records.</p>
+          <a href="/attendance" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">View Marks</div>
+        <div class="card-body">
+          <p>Check your marks and performance.</p>
+          <a href="/student-marks" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">View Subjects</div>
+        <div class="card-body">
+          <p>Check your subjects and assignments.</p>
+          <a href="/subjects" class="btn btn-primary">Go</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
+
+

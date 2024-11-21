@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Create Student Marks</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+  Welcome to Magadh University
+</header>
+<main class="container">
+  <h1>Create Student Marks</h1>
+  <div th:if="${message}" class="alert alert-success" role="alert">
+    <span th:text="${message}"></span>
+  </div>
+  <form action="#" th:action="@{/student-marks/create}" th:object="${studentMarks}" method="post">
+    <div class="form-group">
+      <label for="student">Student</label>
+      <select class="form-control" id="student" name="studentId" th:field="*{studentId}" required>
+        <option th:each="student : ${students}" th:value="${student.studentId}" th:text="${student.name}"></option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="subjectId">Subject ID</label>
+      <input type="text" class="form-control" id="subjectId" name="subjectId" th:field="*{subjectId}" required>
+    </div>
+    <div class="form-group">
+      <label for="semester">Semester</label>
+      <input type="text" class="form-control" id="semester" name="semester" th:field="*{semester}" required>
+    </div>
+    <div class="form-group">
+      <label for="internal1">Internal 1</label>
+      <input type="number" class="form-control" id="internal1" name="internal1" th:field="*{internal1}" required>
+    </div>
+    <div class="form-group">
+      <label for="internal2">Internal 2</label>
+      <input type="number" class="form-control" id="internal2" name="internal2" th:field="*{internal2}" required>
+    </div>
+    <div class="form-group">
+      <label for="internal3">Internal 3</label>
+      <input type="number" class="form-control" id="internal3" name="internal3" th:field="*{internal3}" required>
+    </div>
+    <div class="form-group">
+      <label for="bestInternalMarks">Best Internal Marks</label>
+      <input type="number" class="form-control" id="bestInternalMarks" name="bestInternalMarks" th:field="*{bestInternalMarks}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="finalExamMarks">Final Exam Marks</label>
+      <input type="number" class="form-control" id="finalExamMarks" name="finalExamMarks" th:field="*{finalExamMarks}" required>
+    </div>
+    <div class="form-group">
+      <label for="totalMarks">Total Marks</label>
+      <input type="number" class="form-control" id="totalMarks" name="totalMarks" th:field="*{totalMarks}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="percentage">Percentage</label>
+      <input type="number" class="form-control" id="percentage" name="percentage" th:field="*{percentage}" readonly>
+    </div>
+    <div class="form-group">
+      <label for="division">Division</label>
+      <input type="text" class="form-control" id="division" name="division" th:field="*{division}" th:classappend="'division-' + ${division}" readonly>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Student Marks</button>
+  </form>
+</main>
+</body>
+</html>
